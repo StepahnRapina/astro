@@ -21,9 +21,10 @@ signos.forEach(signo => {
   for (let grau = 0; grau <= 29; grau++) {
     monomeros[signo][grau] = {
       frase: "",
-      imagem: `${signo}_${grau}.jpg`
+      imagem: `${signo}_${grau}.png`
     };
   }
 });
 
 console.log(JSON.stringify(monomeros, null, 2));
+
