@@ -5,6 +5,14 @@
     <title>Dashboard Astrológico</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <div id="lightbox" class="lightbox hidden">
+    <button class="nav prev" id="lb-prev">❮</button>
+
+    <img id="lightbox-img" src="" alt="Imagem ampliada" />
+
+    <button class="nav next" id="lb-next">❯</button>
+  </div>
+
   <body>
     <main class="dashboard">
       <h1>Pesquisa de Graus Simbólicos</h1>
@@ -36,6 +44,23 @@
 
         <button id="buscar">Pesquisar</button>
       </section>
+      <div class="slider-container">
+        <input
+          type="range"
+          id="slider-grau"
+          min="1"
+          max="30"
+          step="1"
+          value="1"
+        />
+        <span id="slider-valor">1</span>
+      </div>
+      <div class="nav-graus">
+        <button id="grau-menos">− Grau</button>
+        <button id="grau-mais">+ Grau</button>
+      </div>
+
+      <div id="resultado" class="resultado fade"></div>
 
       <section class="resultado" id="resultado">
         <!-- Resultado aparece aqui -->
