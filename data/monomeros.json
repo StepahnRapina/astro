@@ -1,131 +1,142 @@
 {
   "aries": {
-    "0": {
-      "frase": "Um homem robusto, com membros um pouco pesados, esta em pé, caminhando; sua mão direita balança uma clava, a mão esquerda está apoiada no quadril; uma pele de animal ou um pano grosseiro lançado sobre o corpo atenua a nudez. Ele dá a impressão de forca tranquila, mas decidida. Ou – Um homem segurando com a mão direita uma foice e com a esquerda uma atiradeira. Sabian - Uma mulher sai da água, uma foca se levanta e a abraça.",
-      "imagem": "aries_0.png"
-    },
     "1": {
-      "frase": "Um belo cavaleiro sobre um cavalo de raça, arreado ricamente. Com a mão direita maneja um sabre, com a esquerda mantém as rédeas, dominando sem piedade o cavalo, que se empina vendo se introduzir sob suas patas formas reptilianas. Ou – Um homem com cabeça de cão, a mão direita estendida e fechada em sinal de ameaça.",
-      "imagem": "aries_1.png"
+      "titulo": "ÁRIES I — Do Impulso Primeiro",
+      "frase": "Um homem de compleição robusta, de membros algo pesados, acha-se de pé, em passo avançado. Na destra brandindo uma clava, sustém a sinistra apoiada ao flanco. Uma pele de animal, ou pano rude lançado sobre o corpo, vela parcialmente sua nudez. Dele emana a imagem de uma força calma, porém firme e irremovível.",
+      "imagem": "aries_1.png",
+
+      "texto": {
+        "figura": "Áries seja figurado como homem robusto, de membros pesados, avançando em passo firme, brandindo clava na destra e apoiando a sinistra ao flanco, com o corpo apenas velado por pele rude.",
+        "comentario": "A clava significa a força primitiva, não ainda disciplinada pelo engenho. O movimento adiante exprime o início das ações e a urgência do primeiro gesto.",
+        "correspondencias": "Marte, fogo nascente, Oriente, aurora das obras.",
+        "advertencia": "A força que inaugura também pode destruir se não for governada."
+      }
     },
     "2": {
-      "frase": "Uma mulher de boa companhia esta sentada em uma cadeira baixa, em seu aposento; seu olhar é agradável, sorridente, seu vestido é elegante; seu braço direito e sua mão esboçam um gesto como se desejasse explicar alguma coisa a alguém que não se vê. Atrás dela, uma mulher esta semideitada sobre um tapete, pouco vestida, em uma pose lasciva e provocante. Ou – Um homem, com a mão direita estendida e aberta, e a esquerda atravessada em sua cintura.",
-      "imagem": "aries_2.png"
+      "titulo": "ÁRIES I — Do Impulso Primeiro",
+      "frase": "Um belo cavaleiro sobre um cavalo de raça, arreado ricamente. Com a mão direita maneja um sabre, com a esquerda mantém as rédeas, dominando sem piedade o cavalo, que se empina vendo se introduzir sob suas patas formas reptilianas. Ou – Um homem com cabeça de cão, a mão direita estendida e fechada em sinal de ameaça.",
+      "imagem": "aries_2.png",
+      "texto": {
+        "figura": "Áries seja figurado como homem robusto, de membros pesados, avançando em passo firme, brandindo clava na destra e apoiando a sinistra ao flanco, com o corpo apenas velado por pele rude.",
+        "comentario": "A clava significa a força primitiva, não ainda disciplinada pelo engenho. O movimento adiante exprime o início das ações e a urgência do primeiro gesto.",
+        "correspondencias": "Marte, fogo nascente, Oriente, aurora das obras.",
+        "advertencia": "A força que inaugura também pode destruir se não for governada."
+      }
     },
     "3": {
-      "frase": "Um bosque de árvores com muitas plantas e essências de espécies e cores diferentes, no qual passeia um homem rústico. Ao abrigo de uma moita, um homem grosseiro se dissimula. Ou – Um homem com cabelos arrepiados, segurando com a mão direita um gavião e com a esquerda um chicote.",
+      "frase": "Uma mulher de distinta condição encontra-se sentada em cadeira baixa, em seu aposento. Seu semblante é afável e sorridente; o traje, elegante. O braço direito e a mão descrevem um gesto como se desejasse instruir alguém invisível. Atrás dela, outra mulher repousa semi-deitada sobre um tapete, parcamente vestida, em atitude provocante e lasciva. Ou Um homem com a mão direita aberta e estendida, e a esquerda atravessada sobre o ventre.",
       "imagem": "aries_3.png"
     },
     "4": {
-      "frase": "um homem forte, musculoso, decidido, sobe alegremente um monte rochoso que é iluminado por raios que cortam o céu totalmente encoberto por nuvens terríveis e tempestuosas. Apesar do homem estar alegre o cenário é tenebroso e terrivelmente perigoso. Ou, Dois homens: um cortando lenha com um machado; o outro segurando com a mão direita um cetro. ",
+      "frase": "Um bosque de árvores com muitas plantas e essências de espécies e cores diferentes, no qual passeia um homem rústico. Ao abrigo de uma moita, um homem grosseiro se dissimula. Ou – Um homem com cabelos arrepiados, segurando com a mão direita um gavião e com a esquerda um chicote.",
       "imagem": "aries_4.png"
     },
     "5": {
-      "frase": "um homem a cavalo segue por caminhos cheio de curvas na borda de um talude numa montanha, olha altivamente em torno dele; a seus pés, ao fundo do vale, trabalhadores se atarefam. Ou – Um rei, coroa na cabeça, segurando com a mão direita uma esfera e com a esquerda um cetro.",
+      "frase": "um homem forte, musculoso, decidido, sobe alegremente um monte rochoso que é iluminado por raios que cortam o céu totalmente encoberto por nuvens terríveis e tempestuosas. Apesar do homem estar alegre o cenário é tenebroso e terrivelmente perigoso. Ou, Dois homens: um cortando lenha com um machado; o outro segurando com a mão direita um cetro. ",
       "imagem": "aries_5.png"
     },
     "6": {
-      "frase": "Uma raposa corre em direção a um pequeno bosque ao longe, através de um caminho solitário ladeado por um muro de pedras velhas que projeta sua sombra. Ou Um homem com armadura e tendo uma flecha colocada no arco.",
+      "frase": "um homem a cavalo segue por caminhos cheio de curvas na borda de um talude numa montanha, olha altivamente em torno dele; a seus pés, ao fundo do vale, trabalhadores se atarefam. Ou – Um rei, coroa na cabeça, segurando com a mão direita uma esfera e com a esquerda um cetro.",
       "imagem": "aries_6.png"
     },
     "7": {
-      "frase": "Um homem em cólera provoca outros que jogam pacificamente bolas em uma praça pública. Um punhal na mão, tendo dilacerado um cartaz, ele treme de raiva, constatando o pouco efeito que produz. Ou – Um homem com um capacete na cabeça, tendo na mão direita uma atiradeira.",
+      "frase": "Uma raposa corre em direção a um pequeno bosque ao longe, através de um caminho solitário ladeado por um muro de pedras velhas que projeta sua sombra. Ou Um homem com armadura e tendo uma flecha colocada no arco.",
       "imagem": "aries_7.png"
     },
     "8": {
-      "frase": "Um homem em pé sobre um terraço elevado, os braços cruzados sobre o peito, em uma pose altiva, olha com ar conquistador o panorama de uma cidade a seus pés. Ou – Um homem, com a cabeça nua, tendo na mão esquerda uma espada.",
+      "frase": "Um homem em cólera provoca outros que jogam pacificamente bolas em uma praça pública. Um punhal na mão, tendo dilacerado um cartaz, ele treme de raiva, constatando o pouco efeito que produz. Ou – Um homem com um capacete na cabeça, tendo na mão direita uma atiradeira.",
       "imagem": "aries_8.png"
     },
     "9": {
-      "frase": "A esquerda: um campo de batalha, mortos e feridos. A direita: um quadro de caça, faisões, perdizes, coelhos; no meio, um homem armado. Ou – Um homem perfurando um urso com um golpe de lança.",
+      "frase": "Um homem em pé sobre um terraço elevado, os braços cruzados sobre o peito, em uma pose altiva, olha com ar conquistador o panorama de uma cidade a seus pés. Ou – Um homem, com a cabeça nua, tendo na mão esquerda uma espada.",
       "imagem": "aries_9.png"
     },
     "10": {
-      "frase": "Uma mulher recostada sobre um sofá ou divã, em uma posição e com traje leve igualmente elegantes e um tanto equívocos, o vestido parecendo prestes a escorregar da espádua. Ou – Uma mulher em pé, segurando com a mão direita uma chave.",
+      "frase": "A esquerda: um campo de batalha, mortos e feridos. A direita: um quadro de caça, faisões, perdizes, coelhos; no meio, um homem armado. Ou – Um homem perfurando um urso com um golpe de lança.",
       "imagem": "aries_10.png"
     },
     "11": {
-      "frase": "Um homem segurando seus dois pequenos filhos pelas mãos passeia com eles em seu jardim; se entreve a casa simples através dos ramos. O pai é amável e, entretanto, ele parece atormentado por uma ideia que se percebe a razão no espelho de água que lhe mostra o seu reflexo adornado, cingido por uma faixa, etc. Ou – Uma águia com as asas abertas, voando em redor de seu ninho.",
+      "frase": "Uma mulher recostada sobre um sofá ou divã, em uma posição e com traje leve igualmente elegantes e um tanto equívocos, o vestido parecendo prestes a escorregar da espádua. Ou – Uma mulher em pé, segurando com a mão direita uma chave.",
       "imagem": "aries_11.png"
     },
     "12": {
-      "frase": "Uma montanha iluminada pelo sol poente. Sobre seu cume se perfila um homem já idoso, um pouco curvado, segurando um cetro com a mão direita e uma coroa real com a mão esquerda. Um amplo manto esconde seu traje. Ou – Um homem lutando com um carneiro que mantém pelos chifres.",
+      "frase": "Um homem segurando seus dois pequenos filhos pelas mãos passeia com eles em seu jardim; se entreve a casa simples através dos ramos. O pai é amável e, entretanto, ele parece atormentado por uma ideia que se percebe a razão no espelho de água que lhe mostra o seu reflexo adornado, cingido por uma faixa, etc. Ou – Uma águia com as asas abertas, voando em redor de seu ninho.",
       "imagem": "aries_12.png"
     },
     "13": {
-      "frase": "Um homem bem trajado e de boa aparência sai de um celeiro bem suprido e apresenta, levantando o braço, um copo cheio de vinho. Diante dele um cão e um leão sentados se olham amigavelmente. Ou – Um homem em pé, as mãos entrelaçadas.",
+      "frase": "Uma montanha iluminada pelo sol poente. Sobre seu cume se perfila um homem já idoso, um pouco curvado, segurando um cetro com a mão direita e uma coroa real com a mão esquerda. Um amplo manto esconde seu traje. Ou – Um homem lutando com um carneiro que mantém pelos chifres.",
       "imagem": "aries_13.png"
     },
     "14": {
-      "frase": "Um homem em perigo de se afogar se debate contra a corrente; um pouco acima se vê a passarela que se desmoronou sob seus passos. Ou – Um homem com armadura, cabeça nua, com os braços afastados e estendidos.",
+      "frase": "Um homem bem trajado e de boa aparência sai de um celeiro bem suprido e apresenta, levantando o braço, um copo cheio de vinho. Diante dele um cão e um leão sentados se olham amigavelmente. Ou – Um homem em pé, as mãos entrelaçadas.",
       "imagem": "aries_14.png"
     },
     "15": {
-      "frase": "Uma mulher em pé, um pouco inclinada para frente, tem em equilíbrio uma balança cujos pratos contêm um deles um copo de vinho, e o outro, peças de ouro, diamantes, pérolas etc. Ou – Um homem derramando a água contida em um vaso.",
+      "frase": "Um homem em perigo de se afogar se debate contra a corrente; um pouco acima se vê a passarela que se desmoronou sob seus passos. Ou – Um homem com armadura, cabeça nua, com os braços afastados e estendidos.",
       "imagem": "aries_15.png"
     },
     "16": {
-      "frase": "Um jovem estudante, um livro na mão, passeia por um caminho sombreado; os raios do sol passam através dos ramos e iluminam seu rosto. Ou – Um homem ricamente vestido, em pé e imóvel.",
+      "frase": "Uma mulher em pé, um pouco inclinada para frente, tem em equilíbrio uma balança cujos pratos contêm um deles um copo de vinho, e o outro, peças de ouro, diamantes, pérolas etc. Ou – Um homem derramando a água contida em um vaso.",
       "imagem": "aries_16.png"
     },
     "17": {
-      "frase": "Um homem e uma mulher, ambos em pé, se apertam as mãos; eles têm um ar bom e doce, e o homem esboça um gesto de proteção. Ou – Uma mulher sentada em um trono, a mão direita levantada.",
+      "frase": "Um jovem estudante, um livro na mão, passeia por um caminho sombreado; os raios do sol passam através dos ramos e iluminam seu rosto. Ou – Um homem ricamente vestido, em pé e imóvel.",
       "imagem": "aries_17.png"
     },
     "18": {
-      "frase": "Um velho, vestido com um roupão gasto, em interior pobre, aperta nervosamente contra seu peito dois sacos de pano, sobre os quais se destaca a palavra: Ouro. Ou – Um homem em pé, as mãos estendidas para um cofre de onde escapa ouro.",
+      "frase": "Um homem e uma mulher, ambos em pé, se apertam as mãos; eles têm um ar bom e doce, e o homem esboça um gesto de proteção. Ou – Uma mulher sentada em um trono, a mão direita levantada.",
       "imagem": "aries_18.png"
     },
     "19": {
-      "frase": "Um homem se equipa para uma longa e dura viagem; em redor dele acessórios diversos; em seu cinto uma bolsa e um punhal. Ou – Um homem com um capacete na cabeça, montado sobre um avestruz, e puxando um cavalo pelo bridão.",
+      "frase": "Um velho, vestido com um roupão gasto, em interior pobre, aperta nervosamente contra seu peito dois sacos de pano, sobre os quais se destaca a palavra: Ouro. Ou – Um homem em pé, as mãos estendidas para um cofre de onde escapa ouro.",
       "imagem": "aries_19.png"
     },
     "20": {
-      "frase": "Um homem só sobre uma jangada, no meio do oceano encapelado; está maltrapilho, magro, com fome, miserável; mas é enérgico e mostra bons sinais de destreza. Ou – Um cão sentado em frente de um leão, igualmente sentado.",
+      "frase": "Um homem se equipa para uma longa e dura viagem; em redor dele acessórios diversos; em seu cinto uma bolsa e um punhal. Ou – Um homem com um capacete na cabeça, montado sobre um avestruz, e puxando um cavalo pelo bridão.",
       "imagem": "aries_20.png"
     },
     "21": {
-      "frase": "Um homem, com ar distraído, se afasta de uma fonte da qual acaba de apanhar água, que ele deixa escapar da vasilha, sem se aperceber; no canto, um urso teima em morder uma árvore caída no solo. Ou – Um urso sentado mordendo uma viga.",
+      "frase": "Um homem só sobre uma jangada, no meio do oceano encapelado; está maltrapilho, magro, com fome, miserável; mas é enérgico e mostra bons sinais de destreza. Ou – Um cão sentado em frente de um leão, igualmente sentado.",
       "imagem": "aries_21.png"
     },
     "22": {
-      "frase": "Um homem está sentado sobre o canto de uma mesa debaixo de um caramanchão, o ar despreocupado, olhando na luz o vinho de seu copo, enquanto dois maus companheiros, sentados não longe dele, conversam misteriosamente, o observando; à direita, três serpentes combatendo três outras. Ou – Três serpentes que combatem três outras.",
+      "frase": "Um homem, com ar distraído, se afasta de uma fonte da qual acaba de apanhar água, que ele deixa escapar da vasilha, sem se aperceber; no canto, um urso teima em morder uma árvore caída no solo. Ou – Um urso sentado mordendo uma viga.",
       "imagem": "aries_22.png"
     },
     "23": {
-      "frase": "Um homem, preguiçosamente recostado sobre um tapete, joga com uma mão bolas brilhantes ou diversamente coloridas, enquanto que atrás dele se tem uma mulher quase nua, com um cinto guarnecido com pedras preciosas, que o olha com um ar dominador e desdenhoso. Ou – Uma mulher nua, apenas com um cinto, com a mão direita estendida.",
+      "frase": "Um homem está sentado sobre o canto de uma mesa debaixo de um caramanchão, o ar despreocupado, olhando na luz o vinho de seu copo, enquanto dois maus companheiros, sentados não longe dele, conversam misteriosamente, o observando; à direita, três serpentes combatendo três outras. Ou – Três serpentes que combatem três outras.",
       "imagem": "aries_23.png"
     },
     "24": {
-      "frase": "Um cavaleiro dando a impressão de forca monta um cavalo bravo que mantém firmemente nas mãos. Ele olha com um ar de desprezo um ser mal formado, com os cabelos desordenados, montado sobre um carneiro, que se esforça para jogá‑lo no chão. Ou – Um homem com cabelos eriçados e montado sobre um carneiro.",
+      "frase": "Um homem, preguiçosamente recostado sobre um tapete, joga com uma mão bolas brilhantes ou diversamente coloridas, enquanto que atrás dele se tem uma mulher quase nua, com um cinto guarnecido com pedras preciosas, que o olha com um ar dominador e desdenhoso. Ou – Uma mulher nua, apenas com um cinto, com a mão direita estendida.",
       "imagem": "aries_24.png"
     },
     "25": {
-      "frase": "Um personagem real apresenta seu cetro a um clérigo ajoelhado, enquanto sobre eles um grande sol projeta seus raios sobre um sol menor. Ou – Um sol projetando seus raios sobre um sol menor.",
+      "frase": "Um cavaleiro dando a impressão de forca monta um cavalo bravo que mantém firmemente nas mãos. Ele olha com um ar de desprezo um ser mal formado, com os cabelos desordenados, montado sobre um carneiro, que se esforça para jogá‑lo no chão. Ou – Um homem com cabelos eriçados e montado sobre um carneiro.",
       "imagem": "aries_25.png"
     },
     "26": {
-      "frase": "Um homem tendo tropeçado vai cair, os braços para frente, próximo de um dragão que parece o observar. Ou – Um grande dragão estendido sobre a terra.",
+      "frase": "Um personagem real apresenta seu cetro a um clérigo ajoelhado, enquanto sobre eles um grande sol projeta seus raios sobre um sol menor. Ou – Um sol projetando seus raios sobre um sol menor.",
       "imagem": "aries_26.png"
     },
     "27": {
-      "frase": "Uma mulher loira, ricamente vestida, está em pé, só, fazendo um gesto de acolhimento. Ou – Uma mulher em pé, ricamente vestida.",
+      "frase": "Um homem tendo tropeçado vai cair, os braços para frente, próximo de um dragão que parece o observar. Ou – Um grande dragão estendido sobre a terra.",
       "imagem": "aries_27.png"
     },
     "28": {
-      "frase": "Um homem robusto e de aparência humilde abate uma árvore a golpes de machado; no solo um livro, porque o homem se repousa estudando. Ou – Um homem segurando com suas duas mãos uma serra.",
+      "frase": "Uma mulher loira, ricamente vestida, está em pé, só, fazendo um gesto de acolhimento. Ou – Uma mulher em pé, ricamente vestida.",
       "imagem": "aries_28.png"
     },
     "29": {
-      "frase": "Uma mulher puxa atrás dela um cavalo bem arreado, em lugar de se fazer transportar por ele, e mais longe, um homem equipado para ir à guerra parece consultar a Lua em seu declínio. Ou – Uma mulher puxando atrás dela um cavalo arreado.",
+      "frase": "Um homem robusto e de aparência humilde abate uma árvore a golpes de machado; no solo um livro, porque o homem se repousa estudando. Ou – Um homem segurando com suas duas mãos uma serra.",
       "imagem": "aries_29.png"
+    },
+    "30": {
+      "frase": "Uma mulher puxa atrás dela um cavalo bem arreado, em lugar de se fazer transportar por ele, e mais longe, um homem equipado para ir à guerra parece consultar a Lua em seu declínio. Ou – Uma mulher puxando atrás dela um cavalo arreado.",
+      "imagem": "aries_30.png"
     }
   },
   "touro": {
-    "0": {
-      "frase": "",
-      "imagem": "touro_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "touro_1.png"
@@ -241,13 +252,13 @@
     "29": {
       "frase": "",
       "imagem": "touro_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "touro_30.png"
     }
   },
   "gemeos": {
-    "0": {
-      "frase": "",
-      "imagem": "gemeos_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "gemeos_1.png"
@@ -363,13 +374,13 @@
     "29": {
       "frase": "",
       "imagem": "gemeos_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "gemeos_30.png"
     }
   },
   "cancer": {
-    "0": {
-      "frase": "",
-      "imagem": "cancer_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "cancer_1.png"
@@ -485,13 +496,13 @@
     "29": {
       "frase": "",
       "imagem": "cancer_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "cancer_30.png"
     }
   },
   "leao": {
-    "0": {
-      "frase": "",
-      "imagem": "leao_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "leao_1.png"
@@ -607,13 +618,13 @@
     "29": {
       "frase": "",
       "imagem": "leao_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "leao_30.png"
     }
   },
   "virgem": {
-    "0": {
-      "frase": "",
-      "imagem": "virgem_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "virgem_1.png"
@@ -729,13 +740,13 @@
     "29": {
       "frase": "",
       "imagem": "virgem_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "virgem_30.png"
     }
   },
   "libra": {
-    "0": {
-      "frase": "",
-      "imagem": "libra_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "libra_1.png"
@@ -851,13 +862,13 @@
     "29": {
       "frase": "",
       "imagem": "libra_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "libra_30.png"
     }
   },
   "escorpiao": {
-    "0": {
-      "frase": "",
-      "imagem": "escorpiao_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "escorpiao_1.png"
@@ -973,13 +984,13 @@
     "29": {
       "frase": "",
       "imagem": "escorpiao_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "escorpiao_30.png"
     }
   },
   "sagitario": {
-    "0": {
-      "frase": "",
-      "imagem": "sagitario_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "sagitario_1.png"
@@ -1095,13 +1106,13 @@
     "29": {
       "frase": "",
       "imagem": "sagitario_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "sagitario_30.png"
     }
   },
   "capricornio": {
-    "0": {
-      "frase": "",
-      "imagem": "capricornio_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "capricornio_1.png"
@@ -1217,13 +1228,13 @@
     "29": {
       "frase": "",
       "imagem": "capricornio_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "capricornio_30.png"
     }
   },
   "aquario": {
-    "0": {
-      "frase": "",
-      "imagem": "aquario_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "aquario_1.png"
@@ -1339,13 +1350,13 @@
     "29": {
       "frase": "",
       "imagem": "aquario_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "aquario_30.png"
     }
   },
   "peixes": {
-    "0": {
-      "frase": "",
-      "imagem": "peixes_0.png"
-    },
     "1": {
       "frase": "",
       "imagem": "peixes_1.png"
@@ -1461,6 +1472,10 @@
     "29": {
       "frase": "",
       "imagem": "peixes_29.png"
+    },
+    "30": {
+      "frase": "",
+      "imagem": "peixes_30.png"
     }
   }
 }
