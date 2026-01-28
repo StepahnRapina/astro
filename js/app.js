@@ -28,10 +28,8 @@ const signos = [
   "peixes",
 ];
 
-let ultimoGrauSlider = 1;
-
 // ===============================
-// FUNÇÃO DE RENDERIZAÇÃO ANIMADA
+// RENDERIZAÇÃO
 // ===============================
 function renderizarResultadoAnimado(html) {
   resultado.classList.remove("fade-in");
@@ -45,40 +43,28 @@ function renderizarResultadoAnimado(html) {
 }
 
 // ===============================
-// AJUSTE DE GRAU (+ / -)
+// AJUSTE DE GRAU / SIGNO
 // ===============================
 function ajustarGrau(delta) {
   let grauAtual = Number(campoGrau.value) || 1;
   let signoAtual = campoSigno.value;
-
   if (!signoAtual) return;
 
   let indiceSigno = signos.indexOf(signoAtual);
   let novoGrau = grauAtual + delta;
 
-  // Avança signo
   if (novoGrau > 30) {
     novoGrau = 1;
-    indiceSigno++;
-
-    if (indiceSigno >= signos.length) {
-      indiceSigno = 0; // volta para Áries
-    }
+    indiceSigno = (indiceSigno + 1) % signos.length;
   }
 
-  // Retrocede signo
   if (novoGrau < 1) {
     novoGrau = 30;
-    indiceSigno--;
-
-    if (indiceSigno < 0) {
-      indiceSigno = signos.length - 1; // vai para Peixes
-    }
+    indiceSigno = (indiceSigno - 1 + signos.length) % signos.length;
   }
 
   campoSigno.value = signos[indiceSigno];
   campoGrau.value = novoGrau;
-
   sliderGrau.value = novoGrau;
   sliderValor.textContent = novoGrau;
 
@@ -86,162 +72,169 @@ function ajustarGrau(delta) {
 }
 
 // ===============================
-// FUNÇÃO PRINCIPAL
+// BUSCA PRINCIPAL
 // ===============================
 async function executarBusca() {
   const signo = campoSigno.value;
   const grau = Number(campoGrau.value);
 
-  // Validação
-  if (!signo) {
-    resultado.innerHTML = "<p>Selecione um signo.</p>";
+  if (!signo || grau < 1 || grau > 30) {
+    resultado.innerHTML = "<p>Selecione signo e grau válidos.</p>";
     return;
   }
 
-  if (!grau || grau < 1 || grau > 30) {
-    resultado.innerHTML = "<p>Informe um grau entre 1 e 30.</p>";
-    return;
-  }
+  const resposta = await fetch("data/monomeros.json");
+  const dados = await resposta.json();
+  const item = dados[signo]?.[grau];
+  if (!item) return;
 
-  try {
-    const resposta = await fetch("data/monomeros.json");
-    const dados = await resposta.json();
+  const html = `
+    <h2>${item.titulo}</h2>
+    <p>${item.frase}</p>
+    <img src="images/monomeros/${item.imagem}" alt="Imagem simbólica">
+    <div>
+      <p><strong>Figura.</strong> ${item.texto.figura}</p>
+      <p><strong>Comentário.</strong> ${item.texto.comentario}</p>
+      <p><strong>Correspondências.</strong> ${item.texto.correspondencias}</p>
+      <p><strong>Advertência.</strong> ${item.texto.advertencia}</p>
+    </div>
+  `;
 
-    const item = dados[signo]?.[grau];
-
-    if (!item) {
-      resultado.innerHTML = "<p>Grau não encontrado.</p>";
-      return;
-    }
-
-    const imgPath = `images/monomeros/${item.imagem}`;
-    const fallbackPath = "images/monomeros/fallback.png";
-
-    const html = `
-      <h2 class="titulo-grau">${item.titulo}</h2>
-
-      <p class="frase-grau">${item.frase}</p>
-
-      <img 
-        src="${imgPath}" 
-        alt="Imagem simbólica do grau"
-        onerror="this.onerror=null; this.src='${fallbackPath}'"
-      >
-
-      <div class="texto-estruturado">
-        <p><strong>Figura.</strong> ${item.texto.figura}</p>
-        <p><strong>Comentário.</strong> ${item.texto.comentario}</p>
-        <p><strong>Correspondências.</strong> ${item.texto.correspondencias}</p>
-        <p><strong>Advertência.</strong> ${item.texto.advertencia}</p>
-      </div>
-    `;
-
-    renderizarResultadoAnimado(html);
-  } catch (erro) {
-    resultado.innerHTML = "<p>Erro ao carregar os dados.</p>";
-    console.error(erro);
-  }
+  renderizarResultadoAnimado(html);
 }
 
 // ===============================
-// EVENTOS
+// EVENTOS GERAIS
 // ===============================
-
-// Botão buscar
 botao.addEventListener("click", executarBusca);
-
-// Botões + / -
 btnMais.addEventListener("click", () => ajustarGrau(1));
 btnMenos.addEventListener("click", () => ajustarGrau(-1));
 
-// Slider
-sliderGrau.addEventListener("input", () => {
-  const novoGrau = Number(sliderGrau.value);
-  const signoAtual = campoSigno.value;
-
-  if (!signoAtual) return;
-
-  let indiceSigno = signos.indexOf(signoAtual);
-
-  // Detecta avanço zodiacal
-  if (ultimoGrauSlider === 30 && novoGrau === 1) {
-    indiceSigno++;
-    if (indiceSigno >= signos.length) indiceSigno = 0;
-  }
-
-  // Detecta retrocesso zodiacal
-  if (ultimoGrauSlider === 1 && novoGrau === 30) {
-    indiceSigno--;
-    if (indiceSigno < 0) indiceSigno = signos.length - 1;
-  }
-
-  campoSigno.value = signos[indiceSigno];
-  campoGrau.value = novoGrau;
-  sliderValor.textContent = novoGrau;
-
-  ultimoGrauSlider = novoGrau;
-
-  executarBusca();
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") executarBusca();
+  if (e.key === "ArrowRight") ajustarGrau(1);
+  if (e.key === "ArrowLeft") ajustarGrau(-1);
 });
 
-// Campo grau manual
-campoGrau.addEventListener("input", () => {
-  const valor = Number(campoGrau.value);
-  if (valor >= 1 && valor <= 30) {
-    sliderGrau.value = valor;
-    sliderValor.textContent = valor;
-  }
-});
-
-// Teclado
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") executarBusca();
-  if (event.key === "ArrowRight") ajustarGrau(1);
-  if (event.key === "ArrowLeft") ajustarGrau(-1);
-});
 // ===============================
-// LIGHTBOX
+// LIGHTBOX + ZOOM + PAN (CORRIGIDO)
 // ===============================
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lbPrev = document.getElementById("lb-prev");
 const lbNext = document.getElementById("lb-next");
 
-// Abre lightbox
+let zoomLevel = 1;
+let translateX = 0;
+let translateY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+const ZOOM_MIN = 1;
+const ZOOM_MAX = 3;
+const ZOOM_STEP = 0.2;
+
+function limitar(v, min, max) {
+  return Math.min(Math.max(v, min), max);
+}
+
+function aplicarTransformacao() {
+  const imgW = lightboxImg.naturalWidth * zoomLevel;
+  const imgH = lightboxImg.naturalHeight * zoomLevel;
+
+  const limiteX = Math.max(0, (imgW - window.innerWidth) / 2);
+  const limiteY = Math.max(0, (imgH - window.innerHeight) / 2);
+
+  translateX = limitar(translateX, -limiteX, limiteX);
+  translateY = limitar(translateY, -limiteY, limiteY);
+
+  lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+}
+
+function resetarTransformacao() {
+  zoomLevel = 1;
+  translateX = 0;
+  translateY = 0;
+  aplicarTransformacao();
+}
+
 function abrirLightbox(src) {
+  resetarTransformacao();
   lightboxImg.src = src;
   lightbox.classList.remove("hidden");
 }
 
-// Fecha lightbox
 function fecharLightbox() {
   lightbox.classList.add("hidden");
   lightboxImg.src = "";
 }
 
-// Clique na imagem principal → abre
+// Abrir ao clicar na imagem
 document.addEventListener("click", (e) => {
-  if (e.target.matches("#resultado img")) {
-    abrirLightbox(e.target.src);
-  }
+  if (e.target.matches("#resultado img")) abrirLightbox(e.target.src);
 });
 
-// Clique fora da imagem → fecha
+// Fechar ao clicar fora
 lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox || e.target === lightboxImg) {
-    fecharLightbox();
-  }
+  if (e.target === lightbox) fecharLightbox();
 });
 
-// Navegação dentro do lightbox
+// Zoom com scroll
+lightbox.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
+    zoomLevel += e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP;
+    zoomLevel = limitar(zoomLevel, ZOOM_MIN, ZOOM_MAX);
+    aplicarTransformacao();
+  },
+  { passive: false },
+);
+
+// ===============================
+// PAN COM POINTER EVENTS (FIX DEFINITIVO)
+// ===============================
+lightboxImg.addEventListener("pointerdown", (e) => {
+  if (zoomLevel <= 1) return;
+
+  isDragging = true;
+  lightboxImg.setPointerCapture(e.pointerId);
+
+  startX = e.clientX - translateX;
+  startY = e.clientY - translateY;
+});
+
+lightboxImg.addEventListener("pointermove", (e) => {
+  if (!isDragging) return;
+
+  translateX = e.clientX - startX;
+  translateY = e.clientY - startY;
+  aplicarTransformacao();
+});
+
+lightboxImg.addEventListener("pointerup", (e) => {
+  isDragging = false;
+  lightboxImg.releasePointerCapture(e.pointerId);
+});
+
+lightboxImg.addEventListener("pointercancel", () => {
+  isDragging = false;
+});
+
+// ===============================
+// NAVEGAÇÃO DENTRO DO LIGHTBOX
+// ===============================
 lbNext.addEventListener("click", (e) => {
   e.stopPropagation();
   ajustarGrau(1);
+  resetarTransformacao();
   lightboxImg.src = document.querySelector("#resultado img").src;
 });
 
 lbPrev.addEventListener("click", (e) => {
   e.stopPropagation();
   ajustarGrau(-1);
+  resetarTransformacao();
   lightboxImg.src = document.querySelector("#resultado img").src;
 });
