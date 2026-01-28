@@ -27,6 +27,19 @@ const signos = [
   "aquario",
   "peixes",
 ];
+const modal = document.getElementById("disclaimer-modal");
+const fechar = document.getElementById("fechar-disclaimer");
+
+// Exibe na primeira visita
+if (!localStorage.getItem("disclaimer_visto")) {
+  modal.classList.remove("hidden");
+}
+
+fechar.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  localStorage.setItem("disclaimer_visto", "true");
+});
+
 
 // ===============================
 // RENDERIZAÇÃO
@@ -115,126 +128,120 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") ajustarGrau(1);
   if (e.key === "ArrowLeft") ajustarGrau(-1);
 });
-
+if (
+  document.getElementById("lightbox") &&
+  document.getElementById("lightbox-img")
+) {
 // ===============================
-// LIGHTBOX + ZOOM + PAN (CORRIGIDO)
+// LIGHTBOX + ZOOM + PAN (SE EXISTIR)
 // ===============================
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lbPrev = document.getElementById("lb-prev");
 const lbNext = document.getElementById("lb-next");
 
-let zoomLevel = 1;
-let translateX = 0;
-let translateY = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
+if (lightbox && lightboxImg) {
 
-const ZOOM_MIN = 1;
-const ZOOM_MAX = 3;
-const ZOOM_STEP = 0.2;
+  let zoomLevel = 1;
+  let translateX = 0;
+  let translateY = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
 
-function limitar(v, min, max) {
-  return Math.min(Math.max(v, min), max);
-}
+  const ZOOM_MIN = 1;
+  const ZOOM_MAX = 3;
+  const ZOOM_STEP = 0.2;
 
-function aplicarTransformacao() {
-  const imgW = lightboxImg.naturalWidth * zoomLevel;
-  const imgH = lightboxImg.naturalHeight * zoomLevel;
+  function limitar(v, min, max) {
+    return Math.min(Math.max(v, min), max);
+  }
 
-  const limiteX = Math.max(0, (imgW - window.innerWidth) / 2);
-  const limiteY = Math.max(0, (imgH - window.innerHeight) / 2);
+  function aplicarTransformacao() {
+    const rect = lightboxImg.getBoundingClientRect();
 
-  translateX = limitar(translateX, -limiteX, limiteX);
-  translateY = limitar(translateY, -limiteY, limiteY);
+    const excessoX = Math.max(0, (rect.width - window.innerWidth) / 2);
+    const excessoY = Math.max(0, (rect.height - window.innerHeight) / 2);
 
-  lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
-}
+    translateX = limitar(translateX, -excessoX, excessoX);
+    translateY = limitar(translateY, -excessoY, excessoY);
 
-function resetarTransformacao() {
-  zoomLevel = 1;
-  translateX = 0;
-  translateY = 0;
-  aplicarTransformacao();
-}
+    lightboxImg.style.transform =
+      `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+  }
 
-function abrirLightbox(src) {
-  resetarTransformacao();
-  lightboxImg.src = src;
-  lightbox.classList.remove("hidden");
-}
+  function resetarTransformacao() {
+    zoomLevel = 1;
+    translateX = 0;
+    translateY = 0;
+    lightboxImg.style.transform = "translate(0,0) scale(1)";
+  }
 
-function fecharLightbox() {
-  lightbox.classList.add("hidden");
-  lightboxImg.src = "";
-}
+  function abrirLightbox(src) {
+    resetarTransformacao();
+    lightboxImg.src = src;
+    lightbox.classList.remove("hidden");
+  }
 
-// Abrir ao clicar na imagem
-document.addEventListener("click", (e) => {
-  if (e.target.matches("#resultado img")) abrirLightbox(e.target.src);
-});
+  function fecharLightbox() {
+    lightbox.classList.add("hidden");
+    lightboxImg.src = "";
+  }
 
-// Fechar ao clicar fora
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) fecharLightbox();
-});
+  document.addEventListener("click", e => {
+    if (e.target.matches("#resultado img")) {
+      abrirLightbox(e.target.src);
+    }
+  });
 
-// Zoom com scroll
-lightbox.addEventListener(
-  "wheel",
-  (e) => {
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) fecharLightbox();
+  });
+
+  lightbox.addEventListener("wheel", e => {
     e.preventDefault();
     zoomLevel += e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP;
     zoomLevel = limitar(zoomLevel, ZOOM_MIN, ZOOM_MAX);
     aplicarTransformacao();
-  },
-  { passive: false },
-);
+  }, { passive: false });
 
-// ===============================
-// PAN COM POINTER EVENTS (FIX DEFINITIVO)
-// ===============================
-lightboxImg.addEventListener("pointerdown", (e) => {
-  if (zoomLevel <= 1) return;
+  lightboxImg.addEventListener("pointerdown", e => {
+    if (zoomLevel <= 1) return;
+    isDragging = true;
+    lightboxImg.setPointerCapture(e.pointerId);
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+  });
 
-  isDragging = true;
-  lightboxImg.setPointerCapture(e.pointerId);
+  lightboxImg.addEventListener("pointermove", e => {
+    if (!isDragging) return;
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    aplicarTransformacao();
+  });
 
-  startX = e.clientX - translateX;
-  startY = e.clientY - translateY;
-});
+  lightboxImg.addEventListener("pointerup", e => {
+    isDragging = false;
+    lightboxImg.releasePointerCapture(e.pointerId);
+  });
 
-lightboxImg.addEventListener("pointermove", (e) => {
-  if (!isDragging) return;
+  if (lbNext) {
+    lbNext.addEventListener("click", e => {
+      e.stopPropagation();
+      ajustarGrau(1);
+      resetarTransformacao();
+      lightboxImg.src = document.querySelector("#resultado img").src;
+    });
+  }
 
-  translateX = e.clientX - startX;
-  translateY = e.clientY - startY;
-  aplicarTransformacao();
-});
+  if (lbPrev) {
+    lbPrev.addEventListener("click", e => {
+      e.stopPropagation();
+      ajustarGrau(-1);
+      resetarTransformacao();
+      lightboxImg.src = document.querySelector("#resultado img").src;
+    });
+  }
+}}
 
-lightboxImg.addEventListener("pointerup", (e) => {
-  isDragging = false;
-  lightboxImg.releasePointerCapture(e.pointerId);
-});
 
-lightboxImg.addEventListener("pointercancel", () => {
-  isDragging = false;
-});
-
-// ===============================
-// NAVEGAÇÃO DENTRO DO LIGHTBOX
-// ===============================
-lbNext.addEventListener("click", (e) => {
-  e.stopPropagation();
-  ajustarGrau(1);
-  resetarTransformacao();
-  lightboxImg.src = document.querySelector("#resultado img").src;
-});
-
-lbPrev.addEventListener("click", (e) => {
-  e.stopPropagation();
-  ajustarGrau(-1);
-  resetarTransformacao();
-  lightboxImg.src = document.querySelector("#resultado img").src;
-});
