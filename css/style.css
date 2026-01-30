@@ -141,7 +141,7 @@ body {
 .lightbox img {
   max-width: 90%;
   max-height: 85%;
-  cursor: grab;
+  cursor: zoom-in;
   transition: transform 0.25s ease;
   transform-origin: center center;
 }
@@ -227,3 +227,28 @@ body {
 .btn-confirmar:hover {
   background: #000;
 }
+
+.zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.zoom-controls button {
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  cursor: pointer;
+}
+
+.zoom-controls button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
